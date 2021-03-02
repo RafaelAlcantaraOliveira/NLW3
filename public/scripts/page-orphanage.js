@@ -6,9 +6,13 @@ const options = {
   zoomControl: false,
 };
 
+//get values from html
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
 //crate map
 
-const map = L.map("mapid", options).setView([-27.2235866, -49.6446164], 15);
+const map = L.map("mapid", options).setView([lat, lng], 15);
 
 //create and add titleLayer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(
@@ -25,7 +29,7 @@ const icon = L.icon({
 });
 
 // create and add marker
-L.marker([-27.2235866, -49.6446164], { icon }).addTo(map);
+L.marker([lat, lng], { icon }).addTo(map);
 
 //image  gallery
 

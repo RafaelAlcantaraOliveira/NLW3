@@ -96,3 +96,15 @@ function toggleSelect(event){
 
 }
 
+function validate(event){
+
+  // validar se lat e len estão preenchidos
+  const input = document.querySelector('input')
+  if(input.value == ''){
+    event.preventDefault()
+    alert('Selecione um ponto no mapa.')
+
+  }
+
+  
+}
